@@ -1,0 +1,12 @@
+<h1>Search for Marvel characters</h1>
+<div>
+    <form [formGroup]="formGroup">
+        <input type="text" formControlName="name">
+        &nbsp;
+        <button (click)="processForm()" [disabled]="!formGroup.valid || isLoading">Search</button>
+    </form>
+</div>
+<div *ngIf="isLoading">
+    <p>Loading...Please wait.</p>
+    <img src="/assets/img/loading.gif" >
+</div>

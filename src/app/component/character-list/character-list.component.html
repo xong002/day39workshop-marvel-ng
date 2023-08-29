@@ -1,0 +1,12 @@
+<h1>Results</h1>
+<a [routerLink]="['/']">Back to search</a>
+<br>
+<table>
+  <tr *ngFor="let char of characterList">
+    <td [routerLink]="['/character/', char.id]" style="cursor: pointer;">{{ char.name }}</td>
+  </tr>
+  <tr>
+    <td><button (click)="previousList()" [disabled]="offset === 0">Previous</button></td>
+    <td><button (click)="nextList()" [disabled]="endOfResults">Next</button></td>
+  </tr>
+</table>
