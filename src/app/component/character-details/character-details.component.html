@@ -14,3 +14,18 @@
         </tr>
     </table>
 </div>
+<br>
+<div>
+    <h3>Add comments</h3>
+    <form [formGroup]="formGroup">
+        <textarea formControlName="comments"></textarea>
+        <br>
+        <button (click)="processForm()" [disabled]="!formGroup.valid">Submit</button>
+    </form>
+</div>
+<br>
+<div>
+    <a [routerLink]="['/']">Back to search</a>
+</div>
+
+

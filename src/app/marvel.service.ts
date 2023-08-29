@@ -36,4 +36,8 @@ export class MarvelService {
   getComments(charId : number){
     return firstValueFrom(this.http.get('/character/' + charId + '/comments'));
   }
+
+  saveComments(comments: string, charId: number){
+    return firstValueFrom(this.http.post('/character/' + charId, {comments: comments}))
+  }
 }
