@@ -23,7 +23,7 @@ export class SearchFormComponent {
     this.isLoading = true;
     this.svc.getCharacterList(this.formGroup.value['name'], 0).catch(error => {
       this.isLoading = false;
-      alert(error);
+      alert("Error: Please try again.");
       this.formGroup.reset()
     })
   }

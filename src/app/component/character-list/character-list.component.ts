@@ -15,6 +15,8 @@ export class CharacterListComponent {
   offset = 0;
   endOfResults = false;
 
+  // TODO: store offset in service to maintain list position when using browser back button
+  
   ngOnInit(){
     this.characterList = this.svc.characterList;
   }

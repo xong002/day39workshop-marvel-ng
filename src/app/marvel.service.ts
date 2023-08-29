@@ -28,4 +28,8 @@ export class MarvelService {
       }
     );
   }
+
+  getCharacterById(id : number){
+    return firstValueFrom(this.http.get('/character/' + id));
+  }
 }
