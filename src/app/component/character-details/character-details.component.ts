@@ -12,6 +12,8 @@ export class CharacterDetailsComponent {
   svc = inject(MarvelService);
   route = inject(ActivatedRoute);
   mChar! : MarvelCharacter;
+  comments : string[] = [];
+  
 
   ngOnInit(){
     this.svc.getCharacterById(this.route.snapshot.params['id']).then(
@@ -21,7 +23,15 @@ export class CharacterDetailsComponent {
         mChar.name = (data as any).name;
         mChar.thumbnail = (data as any).thumbnail;
         this.mChar = mChar;
+        this.svc.getComments(mChar.id).then(
+          list => {
+            for(let c of (list as any[])){
+              this.comments.push(c.comments)
+            }
+          }
+        );
       }
     )
+
   }
 }

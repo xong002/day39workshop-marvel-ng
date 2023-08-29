@@ -4,5 +4,13 @@
 </div>
 
 <div>
-    <p>Comments section</p>
+    <h3>Comments section</h3>
+    <table>
+        <tr *ngFor="let c of comments, let i = index">
+            <td>
+                {{i+1}}. {{c}}
+                <br>
+            </td>
+        </tr>
+    </table>
 </div>

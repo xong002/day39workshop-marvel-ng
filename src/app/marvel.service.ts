@@ -32,4 +32,8 @@ export class MarvelService {
   getCharacterById(id : number){
     return firstValueFrom(this.http.get('/character/' + id));
   }
+
+  getComments(charId : number){
+    return firstValueFrom(this.http.get('/character/' + charId + '/comments'));
+  }
 }
